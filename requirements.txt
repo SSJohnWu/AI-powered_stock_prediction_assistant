@@ -2,6 +2,7 @@ streamlit
 yfinance
 pandas
 numpy
+scikit-learn
 plotly
 torch
 google-genai
