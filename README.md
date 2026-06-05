@@ -8,7 +8,7 @@
 
 1. **📊 歷史資料即時抓取**：使用 `yfinance` 抓取美股或台股近一年的歷史交易資料，並顯示關鍵指標（公司名稱、產業類型、最新收盤價、52 週最高/最低價）。
 2. **🤖 雙模型預測與對比**：
-   - **線性迴歸 (Linear Regression)**：使用原生 NumPy 矩陣公式（`np.linalg.lstsq`）進行無庫（no-library）模型訓練。
+   - **線性迴歸 (Linear Regression)**：使用 `scikit-learn` 中的 `LinearRegression` 進行模型訓練與預測。
    - **LSTM (長短期記憶網路)**：基於 `PyTorch` 建立輕量化循環神經網路，捕捉時間序列中的非線性特徵。
 3. **📈 互動式圖表可視化**：採用 `Plotly` 繪製精美的互動式折線圖，直觀對比實際收盤價、線性迴歸預測值與 LSTM 預測值。
 4. **📉 模型表現精準評估**：
@@ -23,7 +23,7 @@
 
 - **網頁框架**：[Streamlit](https://streamlit.io/)
 - **數據源**：[yfinance](https://github.com/ranaroussi/yfinance)
-- **數據處理**：Pandas, NumPy
+- **機器學習與數據處理**：Pandas, NumPy, scikit-learn
 - **可視化**：Plotly
 - **深度學習**：PyTorch
 - **AI 報告**：Google GenAI SDK (`google-genai`)
@@ -72,7 +72,8 @@ streamlit run app.py
 
 ```text
 opencode/
-├── app.py              # Streamlit 應用程式主程式碼
+├── .gitignore          # Git 忽略設定文件
+├── app.py              # Streamlit 應用程式主程式碼 (已加入 gitignore，僅保留於本地開發環境)
 ├── requirements.txt    # 專案套件依賴清單
 └── README.md           # 本說明文件
 ```
