@@ -20,7 +20,7 @@
 ### 🛠️ 技術棧要求：
 1. UI 框架：Streamlit (排版需美觀、寬螢幕佈局 `layout="wide"`)
 2. 股市數據：yfinance (取得歷史股價)
-3. 數據與計算：pandas, numpy
+3. 數據與計算：pandas, numpy, scikit-learn
 4. 互動式圖表：plotly.graph_objects
 5. 深度學習框架：PyTorch (用於 LSTM 模型實作)
 6. 大語言模型 SDK：使用最新官方建議的 `google-genai` (注意：請勿使用已過期的 google-generativeai 包)
@@ -42,7 +42,7 @@
 
 3. 🤖 【區塊 2：AI 模型預測】：
    - 提供兩個 AI 模型進行預測與對比：
-     1. 「線性迴歸 (Linear Regression)」：以原生數學矩陣公式（如 `np.linalg.lstsq`）實作模型訓練與預測函數，不要引用 scikit-learn 等額外機器學習庫。
+     1. 「線性迴歸 (Linear Regression)」：使用 scikit-learn 的 `LinearRegression` 進行模型訓練與預測。
      2. 「LSTM (長短期記憶網路)」：使用 PyTorch 建立一個簡單的 LSTM 模型（例如包含一個 LSTM 層與一個全連接層），進行資料正規化（如使用 MinMaxScaler 手寫或簡單除以最大值將資料縮放到 0-1 區間），訓練若干 epochs，並在預測後還原尺度。
    - 預測特徵（Window）：均用過去 30 天的股價預測當天股價。
    - 資料分割：前 80% 作為訓練集，後 20% 作為測試集。
@@ -63,13 +63,13 @@
 
 ### 📄 輸出檔案格式：
 1. **`app.py`**：請提供完整的 Python 原始碼，包含完整的 PyTorch LSTM 模型定義與訓練循環，不要使用 placeholder 或省略任何程式碼段落。
-2. **`requirements.txt`**：請列出所有運行 `app.py` 所需的第三方套件名稱（包含 `google-genai`、`torch`，不要使用已過期的 `google-generativeai`）。
+2. **`requirements.txt`**：請列出所有運行 `app.py` 所需的第三方套件名稱（包含 `google-genai`、`torch`、`scikit-learn`，不要使用已過期的 `google-generativeai`）。
 ```
 
 ---
 
 ## 💡 為什麼這個 Prompt 能產生好的代碼？
 * **技術棧指明**：指名使用 `google-genai`，可以防止 AI 使用已被淘汰的 `google.generativeai` 舊 SDK。
-* **無庫實作與深度學習結合**：要求手寫線性迴歸核心以理解基礎，同時引導使用 PyTorch 實作輕量 LSTM 模型，展現傳統統計與現代機器學習的對比。
+* **機器學習與深度學習結合**：要求使用 scikit-learn 的線性迴歸模型與 PyTorch 實作輕量 LSTM 模型，展現傳統統計預測與現代深度學習的對比。
 * **明確的畫面架構**：將整個專案切割成 5 個區塊（側邊欄、資料抓取、模型、評估、Gemini 分析、筆記），AI 可以精準地分模組撰寫，不會遺漏功能。
 * **出錯診斷設計**：要求加入 `traceback` 機制，確保在使用者的開發環境出錯時容易進行排查。
