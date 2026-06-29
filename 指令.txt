@@ -1,0 +1,39 @@
+Python 虛擬環境
+
+# 確認 Python 路徑
+py --list-paths
+
+# 建虛擬環境（用上面顯示的路徑）
+"C:\Users\你的名字\AppData\Local\Programs\Python\Python311\python.exe" -m venv .venv
+
+# 啟動 (PowerShell)
+.\.venv\Scripts\Activate.ps1
+
+
+opencode CLI
+
+# 安裝指令
+npm i -g opencode-ai
+
+# 進入 opencode 互動模式
+opencode
+
+# 切換模型
+/models
+
+
+裝套件指令
+pip install -r requirements.txt
+
+
+啟動
+streamlit run app.py
+
+
+gemini api key 申請連結：
+
+aistudio.google.com/app/apikey
+
+
+github連結：
+https://github.com/SSJohnWu/AI-powered_stock_prediction_assistant
