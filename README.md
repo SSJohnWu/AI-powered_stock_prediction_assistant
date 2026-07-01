@@ -40,7 +40,9 @@
 ```bash
 # 建立並啟動虛擬環境 (選填)
 python -m venv .venv
-# Windows 啟動虛擬環境：
+# Windows PowerShell 啟動虛擬環境：
+.\.venv\Scripts\Activate.ps1
+# Windows CMD 啟動虛擬環境：
 .venv\Scripts\activate
 # macOS/Linux 啟動虛擬環境：
 source .venv/bin/activate
